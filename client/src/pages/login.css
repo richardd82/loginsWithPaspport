@@ -54,6 +54,10 @@
     padding: 15px 25px;
     border-radius: 5px;
     color: white;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    gap: 2em
 }
 .google{
     background-color: #df4930;
@@ -63,4 +67,26 @@
 }
 .github{
     background-color: #262738;
+}
+.icon{
+    margin-right: 10px;
+}
+input{
+    width: 200px;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+}
+.submit{
+    width: 200px;
+    background-color: rgb(70, 43, 222);
+    color: aliceblue;
+    font-weight: bold;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 5px;
+}
+.loginTitle{
+    position: absolute;
+    top: 150px;
+    color: lightgrey;
 }

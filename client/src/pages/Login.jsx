@@ -7,7 +7,7 @@ import './login.css'
 const Login = () => {
     return (
         <div className='login'>
-            {/* <h1 className="loginTitle">Choose a Login Method</h1> */}
+            <h1 className="loginTitle">Choose a Login Method</h1>
             <div className="wrapper">
                 <div className="left">
                     <div className="loginButton google">

@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <div className='home'>
         {posts.map(post => (
-            <Card key={post.id} post={post} />
+            <Card key={post.id} post={post} />            
         ))}
     </div>
   )

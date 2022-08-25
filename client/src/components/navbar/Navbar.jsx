@@ -1,10 +1,16 @@
 import React from "react";
-import './navbar.css'
-// 
-const Navbar = () => {
+import { Link } from "react-router-dom";
+import "./navbar.css";
+//
+const Navbar = ({user}) => {
 	return (
-		<div className="navbar">
-			<span className="logo">PF APP</span>
+		<div className="navbar"> 
+			<span className="logo">
+				<Link className="link" to="/">
+					PF APP
+				</Link>
+			</span>
+			{user ? (				
 			<ul className="list">
 				<li className="listItem">
 					<img
@@ -16,6 +22,7 @@ const Navbar = () => {
 				<li className="listItem">Richard</li>
 				<li className="listItem">Logout</li>
 			</ul>
+			) : (<Link to='login' />)}
 		</div>
 	);
 };
