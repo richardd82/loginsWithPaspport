@@ -1,0 +1,31 @@
+.navbar {
+	height: 70px;
+	background-color: rgb(70, 43, 222);
+	color: rgb(255, 255, 255);
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	box-shadow: 0px 20px 20px 0px rgba(65, 40, 204, 0.459);
+	-webkit-box-shadow: 0px 20px 20px 0px rgba(70, 43, 222, 0.35);
+	-moz-box-shadow: 0px 20px 20px 0px rgba(70, 43, 222, 0.35);    
+}
+.logo {
+	font-style: 20px;
+	font-weight: bold;
+}
+.list {
+	display: flex;
+	align-items: center;
+	list-style: none;
+}
+.listItem {
+	margin-right: 20px;
+	font-weight: 500;
+	cursor: pointer;
+}
+.avatar {
+	width: 42px;
+	height: 42px;
+	border-radius: 50%;
+	object-fit: cover;
+}
