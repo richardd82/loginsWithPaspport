@@ -2,27 +2,41 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./navbar.css";
 //
-const Navbar = ({user}) => {
+const Navbar = ({ user }) => {
+	const logout = () => {		
+		window.open("http://localhost:5000/auth/logout", "_self");
+	};
+	const GOOGLE_CLIENT_ID = "AIzaSyBQVj2X9xWCr-pgiJDzR0K5TXNVaaUoeec";
+	// const img = user.photos;
+	// console.log(img)
 	return (
-		<div className="navbar"> 
+		<div className="navbar">
 			<span className="logo">
 				<Link className="link" to="/">
 					PF APP
 				</Link>
 			</span>
-			{user ? (				
-			<ul className="list">
-				<li className="listItem">
-					<img
-						src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_960_720.jpg"
-						alt=""
-						className="avatar"
-					/>
-				</li>
-				<li className="listItem">Richard</li>
-				<li className="listItem">Logout</li>
-			</ul>
-			) : (<Link to='login' />)}
+			{user ? (
+				<ul className="list">
+					<li className="listItem">
+						<img
+							src={
+								user.photos[0].value + `?fields=image&key=${GOOGLE_CLIENT_ID}`
+							}
+							alt=""
+							className="avatar"
+						/>
+					</li>
+					<li className="listItem">{user.displayName}</li>
+					<li className="listItem" onClick={logout}>
+						Logout
+					</li>
+				</ul>
+			) : (
+				<Link className="link" to="/login">
+					Login
+				</Link>
+			)}
 		</div>
 	);
 };
