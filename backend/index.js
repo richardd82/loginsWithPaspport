@@ -3,6 +3,7 @@ const cookieSession = require('cookie-session');
 const express = require('express');
 const cors = require('cors');
 const passportSetup = require('./passport');
+require('../passport.js');//AQUI ESTABA EL ERROR!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 const passport = require('passport');
 const authRoute = require('./routes/auth');
 const app = express();
