@@ -1,3 +1,4 @@
+require("dotenv").config();
 const cookieSession = require('cookie-session');
 const express = require('express');
 const cors = require('cors');
@@ -5,7 +6,7 @@ const passportSetup = require('./passport');
 const passport = require('passport');
 const authRoute = require('./routes/auth');
 const app = express();
-
+const { CLIENT_URL, PORT } = process.env;
 
 app.use(cookieSession(
     {
@@ -20,7 +21,7 @@ app.use(passport.session());
 
 app.use(cors(
     {
-    origin: 'http://localhost:3000',
+    origin: CLIENT_URL,
     methods:'GET, POST, PUT, DELETE',
     credentials: true,
     }
@@ -28,6 +29,6 @@ app.use(cors(
 
 app.use("/auth", authRoute);
 
-app.listen('5000', () => {
-    console.log('Server is running on port 5000')
+app.listen(PORT, () => {
+    console.log('Server is running on port '+ PORT)
 });
