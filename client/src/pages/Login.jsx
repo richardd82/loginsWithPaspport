@@ -6,10 +6,10 @@ import "./login.css";
 
 const Login = () => {
   const google = () => {
-    window.open("http://localhost:5000/auth/google", "_self");
+    window.open(process.env.REACT_APP_API_URL+"/auth/google", "_self");
   };
   const github = () => {
-    window.open("http://localhost:5000/auth/github", "_self");
+    window.open(process.env.REACT_APP_API_URL+"/auth/github", "_self");
   };
   // const facebook = () => {
   //     window.open("http://localhost:5000/auth/facebook", "_self");
