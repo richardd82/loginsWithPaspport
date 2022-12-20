@@ -4,9 +4,9 @@ import "./navbar.css";
 //
 const Navbar = ({ user }) => {
 	const logout = () => {		
-		window.open("http://localhost:5000/auth/logout", "_self");
+		window.open(process.env.REACT_APP_API_URL+"/auth/logout", "_self");
 	};
-	const GOOGLE_CLIENT_ID = "AIzaSyBQVj2X9xWCr-pgiJDzR0K5TXNVaaUoeec";
+	// const GOOGLE_CLIENT_ID = "AIzaSyBQVj2X9xWCr-pgiJDzR0K5TXNVaaUoeec";
 	// const img = user.photos;
 	// console.log(img)
 	return (
@@ -21,7 +21,7 @@ const Navbar = ({ user }) => {
 					<li className="listItem">
 						<img
 							src={
-								user.photos[0].value + `?fields=image&key=${GOOGLE_CLIENT_ID}`
+								user.photos[0].value
 							}
 							alt=""
 							className="avatar"
